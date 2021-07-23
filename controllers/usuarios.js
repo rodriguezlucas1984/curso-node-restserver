@@ -58,7 +58,7 @@ const usuarioDelete = async (req = request, res = response) => {
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
   if (usuario.rol === "TEST_ROLE") {
     //Fisicamente lo borramos
-    const usuario = await Usuario.findByIdAndDelete(id);
+    await Usuario.findByIdAndDelete(id);
   }
 
   res.json({

@@ -37,7 +37,8 @@ const UsuarioSchema = Schema({
 UsuarioSchema.methods.toJSON = function () {
   //Debe ser una funcion clasica para que tenga contexto de ejeción propio
   //En una función de flecha el objeto this apuntaria a UsuarioSchema
-  const { __v, password, ...usuario } = this.toObject();
+  const { __v, password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
   return usuario;
 };
 
