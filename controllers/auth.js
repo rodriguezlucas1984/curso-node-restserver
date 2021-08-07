@@ -49,7 +49,6 @@ const googleSingin = async (req = request, res = response) => {
   const { id_token } = req.body;
   try {
     const { correo, img, nombre } = await googleVerify(id_token);
-
     let usuario = await Usuario.findOne({ correo });
 
     if (!usuario) {
@@ -81,7 +80,7 @@ const googleSingin = async (req = request, res = response) => {
     });
   } catch (error) {
     res.status(400).json({
-      msg: "Toke de Google no es válido",
+      msg: "Token de Google no es válido",
     });
   }
 };
