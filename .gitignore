@@ -5,3 +5,7 @@
 /.env
 
 /*.pdf
+
+/uploads/productos/
+
+/uploads/usuarios/
